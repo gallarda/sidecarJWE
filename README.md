@@ -13,7 +13,7 @@ Docker Compose will be used to deploy three containers:
 
 1.   **The NGINX API Gateway**
 2.   **The NGINX Unit Sidecar**
-3.   **A sample API server using "echo-server" -- It outputs a JSON object with the details of the received API request including the body. (Hint: Pipe this output to `jq`)
+3.   **A sample API server using "echo-server"** -- It outputs a JSON object with the details of the received API request including the body. (Hint: Pipe this output to `jq`)
 
 By default, only the API Gateway is exposed on port 80 to accept inbound API requests.  You can change this port (or expose the other containers) by editing the `docker-compose.yml` file.
 
