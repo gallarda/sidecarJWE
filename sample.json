@@ -1,0 +1,12 @@
+{
+  "consumers": {
+    "consumer": {
+      "firstName": "Jon",
+      "lastName": "Doe",
+      "consumerID": "1",
+      "dob": "01011999",
+      "pan": "5555123412341234"
+    }
+  }
+}
+

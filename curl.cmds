@@ -1,0 +1,11 @@
+Encrypt the sample JSON payload:
+curl -s 'http://127.0.0.1/encrypt' --header 'Content-Type: application/json' --data-binary @sample.json
+
+Send an API request with the sample JWE encrypted payload:
+curl -s 'http://127.0.0.1/api/some_version/user/card?yes=no' --header 'Content-Type: application/json' --data-binary @sample.jwe
+
+Encrypt a string provided on the command line:
+curl -s 'http://127.0.0.1/encrypt' --header 'Content-Type: text/plain' --data-raw "The true sign of intelligence is not knowledge but imagination."
+
+Send data directly to the API server and bypass JWE decryption:
+curl -s 'http://127.0.0.1/pass' --header 'Content-Type: application/json' --data-binary @sample.json

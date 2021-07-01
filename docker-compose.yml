@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+        - ./nginx/sidecar.js:/etc/nginx/sidecar.js:ro
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+        - 80:80
+#        - 8080:8080
+
+  unit:
+    image: nginx/unit:1.24.0-jsc11
+    volumes:
+        - ./unit/config.json:/docker-entrypoint.d/config.json:ro
+        - ./jsp/:/jsp/:ro
+#    ports:
+#        - 8000:8000
+
+  backend:
+    image: ealen/echo-server:0.5.1
+    environment:
+      - ENABLE__ENVIRONMENT=false
+#    ports:
+#      - 3000:80
