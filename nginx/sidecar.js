@@ -5,6 +5,10 @@ function transformBody(r) {
    var querystring = (r.variables.args) ? "?"+r.variables.args : "";
    var headers = Object.assign({}, r.headersIn);
 
+// Add X-Forwarded-For header with original client's IP address (for App Protect)
+
+   headers['X-Forwarded-For'] = r.variables.proxy_add_x_forwarded_for;
+
 // We must remove the original "Content-Length" header because we will replace the request body
 
    delete headers['Content-Length'];
